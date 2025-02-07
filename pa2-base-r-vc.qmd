@@ -241,19 +241,25 @@ sum(ts_vec[500:955] >= 100)
 16. Take the square root of all numbers in indices 38 to 465.
 
 ```{r}
-ts_vec[___:___] <- ____(ts_vec[38:465])
+#| label: summing-square-roots
+sum(ts_vec[500:955] >= 100)
+# Summing all the square roots in indices 38 to 465
 ```
 
 17. Use the `round()` function to round all numbers to the nearest whole number.
 
 ```{r}
-ts_vec <- 
+#| label: rounding
+ts_vec <- round(ts_vec, digits = 0)
+# rounding all numbers to the nearest whole number
 ```
 
 18. Replace all instances of the number 39 with 20. *Hint:* Step 18 requires another relational comparison, but this time it is equality. Equality in R is checked with a double equal sign rather than a single equal sign
 
 ```{r}
-ts_vec[ts_vec == ___ ] <- 
+#| label: Replacing-instances
+ts_vec[ts_vec == 39 ] <- 20 
+# replacing all instances of #39 with 20
 ```
 
 **Checkpoint:** Headquarters has informed you that your final message should have 344 even numbers.
@@ -261,10 +267,12 @@ ts_vec[ts_vec == ___ ] <-
 *Hint:* Checking for divisibility is an interesting operation that isn't done much in R. Modulus is the operation you are interested in, where you are checking for whether the numbers are divisible by 2, with no remainder. See what you can find about modulus in R!
 
 ```{r}
+#| label: Finding even numbers
 # Code to verify how many even numbers are in your top_secret vector
 
-___(ts_vec %% 2 == 0)
+sum(ts_vec %% 2 == 0)
 
+# Finding all numbers dividing by 2
 ```
 
 <!-- Developer Stage your Changes, Commit, and Push to the Git Repository-->
@@ -276,7 +284,9 @@ ___(ts_vec %% 2 == 0)
 Use your final vector of numbers as indices for my_symbols to discover the final message, by running the following code:
 
 ```{r}
+#| label: The-secret-message
 stringr::str_c(my_symbols$symbol[ts_vec], collapse = "")
+# Finding out what the secret code is
 ```
 
 Google the first line of this message, if you do not recognize it, to see what poem it is.
