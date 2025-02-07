@@ -158,9 +158,9 @@ ts9 <- ts8^2
 
 ```{r}
 # Write code to verify that there are 352 numbers with values **below** 17
-
-___(ts9 < 17)
-
+#| label: Verify 352 Numbers w/ Values
+sum(ts9 < 17)
+# We found the total number of values below the number 17
 ```
 
 <!-- Developer Stage your Changes, Commit, and Push to the Git Repository-->
@@ -178,37 +178,49 @@ Next, carry out the following steps:
 10. Turn your vector of numbers into a matrix with 5 columns.
 
 ```{r}
-ts_mat <- _____(ts9, ncol = ____) 
+#| label: Vector to 5 Col Matrix
+ts_mat <- matrix(ts9, ncol = 5) 
+#turning our vector that was previously created into a matrix with 5 columns
 ```
 
 11. Separately from your top secret numbers, create a vector of all the even numbers between 1 and 382. Name it "evens". That is, "evens" should contain 2, 4, 6, 8 ..., 382.
 
 ```{r}
-evens <- seq(from = __ , to = __ , by = __)
+#| label: Vector of Even Numbers
+evens <- seq(from = 2, to = 382, by = 2)
+#creating vectors of all the even numbers from 1 to 382
 ```
 
 12. Subtract the "evens" vector from the first column of your secret message matrix.
 
 ```{r}
-ts_mat[, 1] <- ts_mat[, ___] - evens
+#| label: Subtracting Evens
+ts_mat[, 1] <- ts_mat[, 1] - evens
+#subtracted evens from the first column of the secret message matrix
 ```
 
 13. Subtract 100 from all numbers 18-24th rows of the 3rd column.
 
 ```{r}
-ts_mat[18:24, 3] <- ts_mat[____, ____] - ____
+#| label: Subtract 100 from rows 18-24 of col 3
+ts_mat[18:24, 3] <- ts_mat[18:24, 3] - 100
+#we subtracted 100 from all the numbers of the 18th to 24th row of column number 3
 ```
 
 14. Multiply all numbers in the 4th and 5th column by 2.
 
 ```{r}
-ts_mat[, __:__] <- 
+#| label: Multiply 4th and 5th column
+ts_mat[, 4:5] <- ts_mat[, 4:5]*2 
+# Multiplied all numbers within the 4th and 5th column by 2
 ```
 
 15. Turn your matrix back into a vector.
 
 ```{r}
-ts_vec <- ________(ts_mat)
+#| label: Matrix to Vector
+ts_vec <- as.vector(ts_mat)
+# turned our new matrix into a vector
 ```
 
 **Checkpoint:** Headquarters has informed you that at this stage of decoding, all numbers in indices 500 and beyond are below 100. Write the code to verify that this is true for your `top_secret` object!
@@ -217,7 +229,9 @@ ts_vec <- ________(ts_mat)
 
 ```{r}
 # Write code to verify that indices 500 and beyond have values **below** 100
-___(ts_vec[____:____] >= ____)
+#| label: Verify indices below 100
+sum(ts_vec[500:955] >= 100)
+#Verifying that 500 indices and beyond have values below 100
 ```
 
 <!-- Developer Stage your Changes, Commit, and Push to the Git Repository-->
