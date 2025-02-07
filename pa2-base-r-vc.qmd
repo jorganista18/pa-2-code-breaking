@@ -112,10 +112,10 @@ my_symbols$num <- 1:len
 This chunk will load up the encoded secret message as a vector:
 
 ```{r}
-
+#| label: loading-up-the-encoded-message
 top_secret <- read_csv("https://www.dropbox.com/s/k72h1zewk4gtqep/PA_Secret_Code?dl=1", 
                        col_names = FALSE)$X1
-
+# loading up the secret encoded messages as a vector
 ```
 
 By altering this top secret set of numbers, you will be able to create a message. Write your own code to complete the steps, **in the order given** below.
@@ -123,29 +123,33 @@ By altering this top secret set of numbers, you will be able to create a message
 6.  Add 14 to every number.
 
 ```{r}
-
-ts6 <- top_secret ___________
-
+#| label: Adding-14-to-every-number
+ts6 <- top_secret + 14
+# adding 14 to every number
 ```
 
 7.  Multiply every number by 18, then subtract 257.
 
 ```{r}
-
-ts7 <- ts6___________
-
+#| label: multiply-and-subtract
+ts7 <- ts6*18 - 257
+# multiping every number by 18 and then subtracting by 257
 ```
 
 8.  Use the `exp()` function to exponentiate every number.
 
 ```{r}
-ts8 <- ____(ts7)
+#| label: Exponentiating-every-number
+ts8 <- exp(ts7)
+# exponentating every number
 ```
 
 9.  Square every number.
 
 ```{r}
-ts9 <- 
+#| label: Squaring-every-number
+ts9 <- ts8^2
+# Squaring every number
 ```
 
 **Checkpoint:** Headquarters has informed you that at this stage of decoding, there should be 352 numbers in the secret message that are below 17. Write the code to verify that this is true for your `top_secret` object!
